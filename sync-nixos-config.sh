@@ -16,7 +16,7 @@ REPO_DIR="$HOME/nixos-config"
 NIXOS_SOURCE="/etc/nixos"
 HOME_MANAGER_SOURCE="$HOME/.config/home-manager"
 
-echo -e "${BLUE}🔄 Sincronizzazione configurazioni NixOS...${NC}"
+echo -e "${BLUE}Sincronizzazione configurazioni NixOS...${NC}"
 
 # Vai nella directory del repo
 cd "$REPO_DIR"
@@ -25,22 +25,22 @@ cd "$REPO_DIR"
 rm -rf nixos home-manager
 
 # Copia le directory
-echo -e "${BLUE}📁 Copiando /etc/nixos...${NC}"
+echo -e "${BLUE}Copiando /etc/nixos...${NC}"
 cp -r "$NIXOS_SOURCE" ./nixos
 
-echo -e "${BLUE}📁 Copiando ~/.config/home-manager...${NC}"
+echo -e "${BLUE}Copiando ~/.config/home-manager...${NC}"
 cp -r "$HOME_MANAGER_SOURCE" ./home-manager
 
 # Rimuovi il .git dalle directory copiate (se esiste)
 rm -rf ./nixos/.git ./home-manager/.git
 
 # Aggiungi i file a git
-echo -e "${BLUE}📝 Aggiungendo file a git...${NC}"
+echo -e "${BLUE}Aggiungendo file a git...${NC}"
 git add .
 
 # Controlla se ci sono modifiche
 if git diff --staged --quiet; then
-    echo -e "${GREEN}✅ Nessuna modifica da committare${NC}"
+    echo -e "${GREEN}Nessuna modifica da committare${NC}"
     exit 0
 fi
 
@@ -52,11 +52,11 @@ else
 fi
 
 # Commit
-echo -e "${BLUE}💾 Creando commit...${NC}"
+echo -e "${BLUE}Creando commit...${NC}"
 git commit -m "$COMMIT_MSG"
 
 # Push
-echo -e "${BLUE}🚀 Push su GitHub...${NC}"
+echo -e "${BLUE}Push su GitHub...${NC}"
 git push
 
-echo -e "${GREEN}✅ Sincronizzazione completata!${NC}"
+echo -e "${GREEN}Sincronizzazione completata${NC}"
