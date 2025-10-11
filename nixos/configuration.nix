@@ -134,7 +134,7 @@ in
   #hardware.keyboard.zsa.enable = true;
   #CH341 programmer kernel module
   #boot.kernelModules = [ "ch341" ];
-
+  services.blueman.enable = true;
   #------------------------------MISC------------------------------
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
