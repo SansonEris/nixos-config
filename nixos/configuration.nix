@@ -47,27 +47,17 @@ in
     flashrom
     man-pages
     man-pages-posix
-    kdePackages.dolphin
     keymapp
     fish
 
-    # KDE
-    kdePackages.discover # Optional: Install if you use Flatpak or fwupd firmware update sevice
-    kdePackages.kcalc # Calculator
-    kdePackages.kcharselect # Tool to select and copy special characters from all installed fonts
-    kdePackages.kclock # Clock app
-    kdePackages.kcolorchooser # A small utility to select a color
-    kdePackages.kolourpaint # Easy-to-use paint program
-    kdePackages.ksystemlog # KDE SystemLog Application
-    kdePackages.sddm-kcm # Configuration module for SDDM
-    kdiff3 # Compares and merges 2 or 3 files or directories
-    kdePackages.isoimagewriter # Optional: Program to write hybrid ISO files onto USB disks
-    kdePackages.partitionmanager # Optional: Manage the disk devices, partitions and file systems on your computer
-    # Non-KDE graphical packages
-    hardinfo2 # System information and benchmarks for Linux systems
-    vlc # Cross-platform media player and streaming server
-    wayland-utils # Wayland utilities
-    wl-clipboard # Command-line copy/paste utilities for Wayland
+    kdiff3 
+    hardinfo2 
+    vlc 
+    wayland-utils 
+    wl-clipboard 
+
+    wineWowPackages.stable
+
   ];
 
   #------------------------------USERS------------------------------
@@ -93,14 +83,6 @@ in
     pulse.enable = true;
     # If you want to use JACK applications, uncomment the following
     #jack.enable = true;
-  };
-  #------------------------------KDE----------------------------------
-  services = {
-    desktopManager.plasma6.enable = true;
-
-    displayManager.sddm.enable = false;
-
-    displayManager.sddm.wayland.enable = false;
   };
   #------------------------------SHELL--------------------------------
   users.defaultUserShell = pkgs.fish;
@@ -135,6 +117,7 @@ in
   #CH341 programmer kernel module
   #boot.kernelModules = [ "ch341" ];
   services.blueman.enable = true;
+
   #------------------------------MISC------------------------------
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -143,6 +126,8 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+  services.dbus.enable = true;
+  services.dbus.packages = with pkgs; [ dbus ];
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

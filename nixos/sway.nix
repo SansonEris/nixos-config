@@ -10,8 +10,22 @@ in
 		slurp #screenshot
 		wl-clipboard #clipboard
 		mako #notifications
+                kdePackages.dolphin
+                xdg-utils
+                libsForQt5.breeze-icons
+                qt5.full
+                libxkbcommon
+                dbus
 	];
-
+  #------------------------------MIME TYPES & FILE ASSOCIATIONS------------------------------
+	xdg.mime.enable = true;
+	
+	environment.etc."xdg/mimeapps.list".text = ''
+		[Default Applications]
+		inode/directory=org.kde.dolphin.desktop
+		x-scheme-handler/file=org.kde.dolphin.desktop
+	'';
+  #------------------------------------------------------------------------------------------
 	#enable gnome-keyring secrets valut.
 	services.gnome.gnome-keyring.enable = true;
 
