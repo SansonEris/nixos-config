@@ -57,6 +57,12 @@
         kicad
         gimp
         libreoffice
+        yt-dlp
+        audacity
+
+        #music plyaer
+        tauon
+
         (pkgs.python3.withPackages (ps: with ps; [ lzhuf-py openpyxl ]))
           #lzhuf-py #custom_repo
         ];
@@ -101,12 +107,12 @@
         size = 24;
       };
 
-gtk = {
-  enable = true;
-  iconTheme = {
-    name = "Adwaita";  
-    package = pkgs.adwaita-icon-theme;
-  };
-};
+      gtk = {
+        enable = true;
+        iconTheme = {
+          name = "Adwaita";  
+          package = pkgs.adwaita-icon-theme;
+        };
+      };
     }
 
