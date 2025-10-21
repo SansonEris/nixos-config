@@ -56,8 +56,8 @@
         freecad
         kicad
         gimp
-        kdePackages.dolphin
-        (pkgs.python3.withPackages (ps: with ps; [ lzhuf-py ]))
+        libreoffice
+        (pkgs.python3.withPackages (ps: with ps; [ lzhuf-py openpyxl ]))
           #lzhuf-py #custom_repo
         ];
       };
@@ -67,11 +67,11 @@
       enable = true;
       defaultApplications = {
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-        "inode/directory" = [ "org.kde.dolphin.desktop" ];
-        "x-scheme-handler/file" = [ "org.kde.dolphin.desktop" ];
+        #"inode/directory" = [ "org.kde.dolphin.desktop" ];
+        #"x-scheme-handler/file" = [ "org.kde.dolphin.desktop" ];
       };
       associations.added = {
-        "inode/directory" = [ "org.kde.dolphin.desktop" ];
+        #"inode/directory" = [ "org.kde.dolphin.desktop" ];
       };
     };
 
@@ -81,6 +81,7 @@
         latitude = 41.9027835;
         longitude = 12.4963655;
       };
+
 
       xdg.userDirs = {
         enable = true;
@@ -99,5 +100,13 @@
         package = pkgs.adwaita-icon-theme;
         size = 24;
       };
+
+gtk = {
+  enable = true;
+  iconTheme = {
+    name = "Adwaita";  
+    package = pkgs.adwaita-icon-theme;
+  };
+};
     }
 

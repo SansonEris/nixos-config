@@ -56,8 +56,10 @@ in
     wayland-utils 
     wl-clipboard 
 
-    wineWowPackages.stable
-
+    libsForQt5.breeze-icons
+    qt5.full
+    libxkbcommon
+    dbus
   ];
 
   #------------------------------USERS------------------------------
@@ -132,7 +134,15 @@ in
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
+
+  #---------------------------PRINTERS-------------------------------
   services.printing.enable = true;
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   #DO NOT TOUCH!
   system.stateVersion = "25.05"; 

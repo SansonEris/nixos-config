@@ -264,7 +264,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 10%+
 
 # Special key to take a screenshot with grim
 bindsym $mod+p exec grim -t jpeg -g "$(slurp)" ~/Pictures/screenshot/$(date +%Y-%m-%d_%H-%m-%s).jpg
-
+bindsym Shift+$mod+p exec grim -g "$(slurp)" - | wl-copy
 
 #
 # Windows settings
@@ -317,7 +317,7 @@ default_border pixel 2
 # Brower
 bindsym $mod+b exec firefox
 # Dolphin, nemo 
-bindsym $mod+e exec dolphin
+bindsym $mod+e exec thunar 
 # Lock Screen
 bindsym Control+Shift+l exec swaylock -K -e --indicator-radius 100 -i $HOME/Pictures/Wallpapers/EqtkWallpaper.png
 # Screenshot

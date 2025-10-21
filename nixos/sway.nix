@@ -10,12 +10,6 @@ in
 		slurp #screenshot
 		wl-clipboard #clipboard
 		mako #notifications
-                kdePackages.dolphin
-                xdg-utils
-                libsForQt5.breeze-icons
-                qt5.full
-                libxkbcommon
-                dbus
 	];
   #------------------------------MIME TYPES & FILE ASSOCIATIONS------------------------------
 	xdg.mime.enable = true;
