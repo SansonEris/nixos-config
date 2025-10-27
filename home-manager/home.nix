@@ -62,7 +62,8 @@
 
         #music plyaer
         tauon
-
+        
+        btop
         (pkgs.python3.withPackages (ps: with ps; [ lzhuf-py openpyxl ]))
           #lzhuf-py #custom_repo
         ];
