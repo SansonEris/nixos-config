@@ -16,13 +16,16 @@
       username = "eris";
       homeDirectory = "/home/eris";
       stateVersion = "25.05";
-      
+
       sessionVariables = {
         LANG = "en_US.UTF-8";
         LC_ALL = "en_US.UTF-8";
       };
 
       packages = with pkgs; [
+        #music plyaer
+        tauon 
+
         dos2unix
         go
         unzip
@@ -59,28 +62,22 @@
         libreoffice
         yt-dlp
         audacity
-
-        #music plyaer
-        tauon
-        
         btop
+        qbittorrent
+        wineWowPackages.stable
+        winetricks
         (pkgs.python3.withPackages (ps: with ps; [ lzhuf-py openpyxl ]))
           #lzhuf-py #custom_repo
         ];
       };
-    
-    xdg.enable = true;
-    xdg.mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-        #"inode/directory" = [ "org.kde.dolphin.desktop" ];
-        #"x-scheme-handler/file" = [ "org.kde.dolphin.desktop" ];
+
+      xdg.enable = true;
+      xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+        };
       };
-      associations.added = {
-        #"inode/directory" = [ "org.kde.dolphin.desktop" ];
-      };
-    };
 
       services.gammastep = {
         enable = true;
