@@ -30,7 +30,7 @@ set $menu bemenu-run --binding vim -B 1 -W 0.5 -l 5 --fn "JetBrains Mono Regular
 # You have to install swaybg.
 #output * bg ~/Pictures/Wallpapers/EqtkWallpaper.png fill
 #output * bg /usr/share/backgrounds/gnome/blobs-d.svg fill
-output * bg ~/Pictures/ubuntu.jpg fill
+output * bg ~/Pictures/Wallpapers/wp12561420-4k-ubuntu-wallpapers.jpg fill
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0

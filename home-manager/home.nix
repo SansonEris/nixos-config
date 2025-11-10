@@ -13,8 +13,7 @@
     #enable unfree software
     nixpkgs.config.allowUnfree = true;
     home = {
-      username = "eris";
-      homeDirectory = "/home/eris";
+      username = "eris"; homeDirectory = "/home/eris";
       stateVersion = "25.05";
 
       sessionVariables = {
@@ -25,7 +24,7 @@
       packages = with pkgs; [
         #music plyaer
         tauon 
-
+        appimage-run
         dos2unix
         go
         unzip
@@ -44,6 +43,7 @@
         foremost
         localsend
         python313Packages.ipython
+        python313Packages.pip
         bemenu
         qemu
         htop
@@ -66,6 +66,18 @@
         qbittorrent
         wineWowPackages.stable
         winetricks
+        arduino-ide
+        libnfc
+        libusb1
+        screen
+        hfsprogs 
+        apfs-fuse 
+        usbutils 
+        ddrescue
+        p7zip
+        unrar-free
+        ffmpeg
+        geteduroam
         (pkgs.python3.withPackages (ps: with ps; [ lzhuf-py openpyxl ]))
           #lzhuf-py #custom_repo
         ];
@@ -112,5 +124,5 @@
           package = pkgs.adwaita-icon-theme;
         };
       };
-    }
+}
 

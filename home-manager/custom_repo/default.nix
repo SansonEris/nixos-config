@@ -11,7 +11,7 @@ final: prev:
   i3blocks-contrib-time = prev.callPackage ./packages/i3-blocks-contrib-time.nix { };
   ghidra-fix = prev.callPackage ./packages/ghidra-fix.nix { };
   lzhuf-py = prev.callPackage ./packages/lzhuf-py/lzhuf-py.nix { };
-
+  qlcplus-v5 = prev.callPackage ./qlcplus-v5.nix {};
   #metapacchetto con tutti i blocklets
   i3blocks-contrib = prev.buildEnv {
     name = "i3blocks-contrib";

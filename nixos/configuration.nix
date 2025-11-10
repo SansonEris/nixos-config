@@ -143,7 +143,41 @@ in
     nssmdns4 = true;
     openFirewall = true;
   };
-
+  #-----------------------------NFC----------------------------------
+  hardware.nfc-nci.enable = true;
+  #-----------------------------PN543--------------------------------
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+    glib
+    gtk3
+    atk
+    pango
+    cairo
+    gdk-pixbuf
+    xorg.libX11
+    xorg.libXext
+    xorg.libxcb
+    xorg.libXrender
+    xorg.libXrandr
+    xorg.libXi
+    xorg.libXfixes
+    xorg.libXcomposite
+    xorg.libXcursor
+    mesa
+    libGL
+    freetype
+    fontconfig
+    zlib
+    libpng
+    libjpeg
+    nss
+    nspr
+    fuse
+    appimage-run
+    libusb1
+    libnfc
+  ];
   #DO NOT TOUCH!
   system.stateVersion = "25.05"; 
 }
